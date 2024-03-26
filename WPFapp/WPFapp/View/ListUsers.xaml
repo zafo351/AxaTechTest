@@ -1,0 +1,71 @@
+﻿<Window x:Class="WPFapp.View.ListUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp.View"
+        mc:Ignorable="d"
+        Title="ListUsers" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        
+        
+        <DataGrid 
+            Name="DataGridUser" 
+            Grid.Column="0"
+            Grid.Row="0"
+            AutoGenerateColumns="False"
+            IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    x:Name="columIdUser"
+                    Header="Id User" 
+                    Binding="{Binding IdUser}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    x:Name="columFirstName"
+                    Header="First Name" 
+                    Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    x:Name="columLastName"
+                    Header="Last Name"
+                    Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    x:Name="columEmailAddress"
+                    Header="Email"
+                    Binding="{Binding EmailAddress}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    x:Name="columPhone"
+                    Header="Phone"
+                    Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    x:Name="columIdArea"
+                    Header="Id Area"
+                    Binding="{Binding IdArea}"></DataGridTextColumn>
+                <DataGridTemplateColumn Header="Actions">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button CommandParameter="{Binding IdUser}" Content="Editar" Click="OnEditButtonClick" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button
+            x:Name="Cancel"
+            Grid.Column="0" Grid.Row="1" 
+            Width="60" Height="40"
+            HorizontalAlignment="Center"
+            Click="ButtonCancel">Cancel</Button>
+    </Grid>
+</Window>

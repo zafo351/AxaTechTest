@@ -1,0 +1,82 @@
+﻿<Page x:Class="WPFapp.View.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFapp.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="850"
+      Title="Main"
+      Background="White">
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button 
+            Name="BtnNewUser"
+            Margin="0 50 0 0"
+            Grid.Column="0" 
+            Width="200" Height="40" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            BorderBrush="Black"
+            BorderThickness="2" Click="BtnNewUser_Click">New User</Button>
+        <Button 
+            Name="BtnListUser"
+            Margin="0 0 0 0"
+            Grid.Column="0" 
+            Width="200" Height="40" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            BorderBrush="Black"
+            BorderThickness="2" Click="BtnListUser_Click">List/Modify Users</Button>
+        <Button Name="BtnListAreas" 
+                Margin="0 0 0 50"
+                Grid.Column="0" 
+                Width="200" Height="40" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom"
+                BorderBrush="Black"
+                BorderThickness="2" Click="BtnListAreas_Click">List/modify Areas</Button>
+
+        <TextBlock 
+            x:Name="TitleOfDataGrid"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            See the last 10 users created
+        </TextBlock>
+        
+        <DataGrid 
+            Name="DataGrid1"
+            Margin="0 20 0 0"
+            Grid.Column="1" 
+            AutoGenerateColumns="False"
+            IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn 
+                    Header="Id User" 
+                    Binding="{Binding IdUser}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="First Name" 
+                    Binding="{Binding FirstName}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Last Name"
+                    Binding="{Binding LastName}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Email"
+                    Binding="{Binding EmailAddress}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Phone"
+                    Binding="{Binding Phone}"></DataGridTextColumn>
+                <DataGridTextColumn 
+                    Header="Id Area"
+                    Binding="{Binding IdArea}"></DataGridTextColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+    </Grid>
+</Page>

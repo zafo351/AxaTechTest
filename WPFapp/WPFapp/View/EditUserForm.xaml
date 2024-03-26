@@ -1,0 +1,22 @@
+﻿<Window x:Class="WPFapp.View.EditUserForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp.View"
+        mc:Ignorable="d"
+        Title="EditUserForm" Height="250" Width="250">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="txbIdUser" Text="{Binding IdUser}"></TextBlock>
+            <TextBlock x:Name="txbFirstName" Text="{Binding FirstName}"></TextBlock>
+            <TextBlock x:Name="txbLastName" Text="{Binding LastName}"></TextBlock>
+            
+            <Label Content="Correo electrónico:"/>
+            <TextBox x:Name="TextBoxEmail" Text="{Binding EmailAddress}"/>
+            <Label Content="Teléfono:"/>
+            <TextBox x:Name="TextBoxPhone" Text="{Binding Phone}"/>
+            <Button Content="Guardar" Click="OnSaveButtonClick"/>
+        </StackPanel>
+    </Grid>
+</Window>

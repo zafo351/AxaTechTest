@@ -1,0 +1,92 @@
+﻿<Window x:Class="WPFapp.View.CreateForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFapp.View" xmlns:ViewModel="clr-namespace:WPFapp.ViewModel"
+        mc:Ignorable="d"
+        Title="CreateForm" Height="450" Width="800"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStartupLocation="CenterOwner">
+
+    <Border
+        CornerRadius="12"
+        BorderThickness="5"
+        Opacity="0.95">
+        <Border.BorderBrush>
+            <LinearGradientBrush>
+                <GradientStop Color="#462AD8" Offset="0"/>
+                <GradientStop Color="#DA34AE" Offset="0.75"/>
+                <GradientStop Color="#8A16C1" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <GradientStop Color="#FC0000" Offset="0"/>
+                <GradientStop Color="#A800FC" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock 
+                Grid.Column="0" Grid.Row="0" 
+                Margin="30 5 0 0"
+                FontWeight="Black">First Name</TextBlock>
+            <TextBox 
+                Name="txtFirstName" 
+                Grid.Column="0" Grid.Row="0" 
+                Height="50" Width="250">
+            </TextBox>
+            <TextBlock 
+                Grid.Column="0" Grid.Row="1" 
+                Margin="30 0 0 0"
+                FontWeight="Black">Last Name</TextBlock>
+            <TextBox 
+                Name="txtEmail" 
+                Grid.Column="0" Grid.Row="1" 
+                Height="50" Width="250"></TextBox>
+            <TextBlock 
+                Grid.Column="1" Grid.Row="0" 
+                FontWeight="Black">Email Address</TextBlock>
+            <TextBox 
+                Name="txtLastName" 
+                Grid.Column="1" Grid.Row="0" 
+                Height="50" Width="250"
+            ></TextBox>
+            <TextBlock 
+                Grid.Column="1" Grid.Row="1" 
+                FontWeight="Black">Phone Number</TextBlock>
+            <TextBox 
+                Name="txtPhoneNumber" 
+                Grid.Column="1" Grid.Row="1" 
+                Height="50" Width="250"></TextBox>
+
+            <Button
+                x:Name="Cancel"
+                Grid.Column="0" Grid.Row="3" 
+                Width="200" Height="40" 
+                Click="ButtonCancel">Cancel</Button>
+            <Button 
+                x:Name="Save"
+                Grid.Column="1" Grid.Row="3" 
+                Width="200" Height="40" 
+                Click="ButtonSave">Save</Button>
+
+        </Grid>
+
+    </Border>
+    
+</Window>
